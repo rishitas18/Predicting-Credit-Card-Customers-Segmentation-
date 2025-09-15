@@ -1,0 +1,96 @@
+# Corporate Card Customer Segmentation & Churn Prediction
+
+## Project Overview
+This project analyzes credit card customer data to perform behavior and financial segmentation, build churn (attrition) prediction models, and deliver insights via dashboards. The goal is to enable targeted treatment strategies, monitor key metrics, and support business decision-making for portfolio growth, risk, and customer engagement.
+
+## Goals & Objectives
+- Segment customers based on financial & behavioral features to identify high-value, at-risk, and under-utilized groups.  
+- Build predictive model(s) to forecast churn or attrition.  
+- Monitor key performance indicators (KPIs) (churn rate, retention, segment spend) via visualization.  
+- Propose treatment strategies per segment.  
+- Provide data dictionary & metric definitions to ensure clarity and reproducibility.
+
+## Dataset
+- CSV file: `CreditCard.csv`  
+- Number of records: ~25,000 credit card users.  
+- Features include: Age, Gender, Geography, Occupation, Annual Income, Credit Score, Credit Utilization Ratio, Number of Loans, Payment Behavior, Delay from Due Date, etc.
+
+## Feature Engineering
+- What features were created / cleaned (e.g. utilization ratio, delay days, number of delayed payments, etc.).  
+- How missing values were handled.  
+- Possibly transformations (one-hot encoding, normalization/scaling).
+
+## Model Building
+- Techniques tried: Random Forest, Bagging, possibly others (specify).  
+- Train/test split, cross-validation methodology.  
+- Evaluation metrics: accuracy, precision, recall, F1, etc.
+
+## Visualization & Dashboard
+- Tool used: Tableau (or Tableau/Power BI) for dashboards.  
+- Key visuals: segment comparison, churn patterns, top features correlated with churn.
+
+## Treatment Strategy Recommendations
+- Based on segmentation & churn model, what type of treatments could be proposed. E.g.,  
+  - Incentives for under-utilizers  
+  - Credit limit adjustments for high value segments  
+  - Personalized communications for customers likely to churn  
+
+## How to Run
+1. Clone repo  
+2. Install dependencies (e.g. Python libraries, Tableau file)  
+3. Run notebook `Credit Card Customers Segmentation.ipynb` for EDA & segmentation  
+4. Run `Bank Credit Card Churn Prediction.ipynb` for prediction model  
+5. Use `Credit Card SQL Analysis.txt` for SQL analytics insights
+
+## Project Structure
+├── data/
+│ └── CreditCard.csv
+├── notebooks/
+│ ├── Credit Card Customers Segmentation.ipynb
+│ └── Bank Credit Card Churn Prediction.ipynb
+├── dashboard/
+│ └── Credit Card Customers Segment.twbx
+├── docs/
+│ ├── DATA_DICTIONARY.md
+│ └── METRIC_DEFINITIONS.md
+└── README.md
+
+
+
+## Key Insights & Recommendations
+- Summarize 2-3 key findings (for example: age vs churn, utilization ratio importance, occupation differences).  
+- Business recommendations (e.g., "Develop age-based retention programs for 20-50 years," "Offer rewards for customers who pay consistently on time").
+
+---
+
+### `DATA_DICTIONARY.md`
+
+```markdown
+# Data Dictionary
+
+| Feature Name | Description | Data Type | Possible Values / Range |
+|--------------|-------------|-----------|---------------------------|
+| Customer_ID | Unique identifier for each customer | String / Int | Unique per record |
+| Age | Customer age in years | Numeric | ~18-70 |
+| Gender | Gender of customer | Categorical | Male, Female, Other? |
+| Geography | Region or country of residence | Categorical | e.g. USA, Europe, Asia |
+| Occupation | Job role or employment type | Categorical | e.g. Student, Property Dealer, Entrepreneur etc. |
+| Annual_Income | Yearly Income (USD / local currency) | Numeric | 0 – high values |
+| Monthly_Inhand_Salary | Net monthly salary | Numeric | … |
+| Num_Bank_Accounts | Number of bank accounts held | Integer | … |
+| Num_Credit_Card | Number of credit cards owned | Integer | … |
+| Interest_Rate | Interest rate on credit card | Numeric | % value |
+| Num_of_Loan | Number of active loans | Integer | … |
+| Type_of_Loan | Category/type of loan held | Categorical | … |
+| Delay_from_due_date | Average days delayed in payment | Numeric | 0-30+ maybe |
+| Num_of_Delayed_Payment | Number of such delayed payments | Integer | … |
+| Credit_Mix | Credit mix quality (good / standard / poor etc.) | Categorical | … |
+| Outstanding_Debt | Total owed across cards/loans | Numeric | … |
+| Credit_Utilization_Ratio | Balance / credit limit ratio | Numeric (0-1 or % ) | … |
+| Credit_History_Age | Time since first credit line | Numeric | months / years |
+| Payment_of_Min_Amount | Whether only minimum payment is done | Categorical (Yes/No) | Yes / No |
+| Payment_Behaviour | Pattern of payment (early/late/variable) | Categorical / Derived | … |
+| Monthly_Balance | Balance left after payments monthly | Numeric | … |
+| Credit_Score | Target or predictor: credit score (or risk) | Numeric | range .. perhaps 300-850 |
+| Status | Whether customer attrited (churned) or not / existing | Categorical | Existing / Attrited |
+
