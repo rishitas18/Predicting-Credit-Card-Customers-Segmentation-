@@ -65,7 +65,9 @@ Status : Existing and Attrited Customers
 4.Python for Model Building
 
 # Analytics
-Below is the dashboard I created to better understand dataset.
+Below is the dashboard I created to better understand dataset
+<img width="1350" height="958" alt="image" src="https://github.com/user-attachments/assets/f90c7d29-261c-4e10-9ca2-71373044a9ba" />
+
 
 
 # Based on the analysis of the dashboard, the following key conclusions can be drawn:
